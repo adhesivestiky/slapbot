@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     if (err) console.log(err);
   });
   
-    message.channel.send(`You have ${health[hpUser.id]}/100 health left.`);
+    message.channel.send(`You have ${health[hpUser.id].health}/100 health left.`);
 
 
     }
