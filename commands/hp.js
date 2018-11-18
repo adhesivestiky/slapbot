@@ -16,6 +16,8 @@ module.exports.run = async (bot, message, args) => {
   fs.writeFile("./health.json", JSON.stringify(health), (err) => {
     if (err) console.log(err);
   });
+  
+    message.channel.send(`You have ${health}/100 health left.);
 
 
     }
