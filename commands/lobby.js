@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
   const sayMessage = args.join(" ");
   let chat = message.guild.channels.find(`name`, "main-chat");
   
-  chat.send(sayMessage);
+  message.chat.send(sayMessage);
 
 }
 
