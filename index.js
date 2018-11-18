@@ -45,8 +45,8 @@ bot.on("message", async message => {
 
 
 
-    if(cmd === `Fix`) {
-      message.channel.send(".");
+    if(cmd === `${prefix}slap`) {
+      message.channel.send("*Slaps*");
     }
 
   });
