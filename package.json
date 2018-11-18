@@ -1,0 +1,16 @@
+{
+  "name": "test-bot",
+  "version": "0.4.0",
+  "description": "Adhesive's slapping bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "adhesive",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "ree": "^0.1.1-2"
+  },
+  "devDependencies": {}
+}
