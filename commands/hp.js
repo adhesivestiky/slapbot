@@ -9,20 +9,14 @@ module.exports.run = async (bot, message, args) => {
 
   if(!health[hpUser.id]) health[hpUser.id] = {
     health: 100
-  };
+  }
 
 
   fs.writeFile("./health.json", JSON.stringify(health), (err) => {
     if (err) console.log(err);
   });
   
-    let hpEmbed = new Discord.RichEmbed()
-    
-    .setColor("#ff0000")
-    .addField(`${hpUser.tag}'s Health`, `${health[hpUser.id]}/100`)
-    .setFooter(`Requested by ${message.author.tag}`);
-  
-    message.channel.send(hpEmbed);
+  message.channel.send(`${hpUser}'s health: ${health[hpUser.id]}`);
 
 
     }
