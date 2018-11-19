@@ -18,8 +18,8 @@ module.exports.run = async (bot, message, args) => {
   
     let hpEmbed = new Discord.RichEmbed()
     
-    .setColor("#0000ff")
-    .addField(`${hpUser}'s Health`, `${health[hpUser.id]}/100`)
+    .setColor("#ff0000")
+    .addField(`${hpUser.tag}'s Health`, `${health[hpUser.id]}/100`)
     .setFooter(`Requested by ${message.author.tag}`);
   
     message.channel.send(hpEmbed);
