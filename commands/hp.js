@@ -16,7 +16,13 @@ module.exports.run = async (bot, message, args) => {
     if (err) console.log(err);
   });
   
-    message.channel.send(`${hpUser.tag} has ${health[hpUser.id].health}/100 health left.`);
+    let hpEmbed = new Discord.RichEmbed()
+    
+    .setColor("#0000ff")
+    .addField(`${hpUser}'s Health`, `${health[hpUser.id]}/100`)
+    .setFooter(`Requested by ${message.author.tag}`);
+  
+    message.channel.send(hpEmbed);
 
 
     }
