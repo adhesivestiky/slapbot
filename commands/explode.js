@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
 
   health[hpUser.id].warns--;
 
-  fs.writeFile("./health.json", JSON.stringify(warns), (err) => {
+  fs.writeFile("./health.json", JSON.stringify(health), (err) => {
     if (err) console.log(err);
   });
   
