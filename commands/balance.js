@@ -17,9 +17,10 @@ module.exports.run = async (bot, message, args) => {
   let uCash = money[member.id].money;
   
   let cEmbed = new Discord.RichEmbed()
-  .setAuthor(`${message.author.username}'s Balance:`)
+  .setAuthor(`${member.username}'s Balance:`)
   .setColor("#00ff00")
-  .addField(`${message.author.tag} haaaaaaas...`, `${uCash} money!`)
+  .addField(`${member.tag} haaaaaaas...`, `${uCash} money!`)
+  .setFooter(`Requested by ${message.author.tag}, can't remember when.`);
   
   message.channel.send(cEmbed);
   
