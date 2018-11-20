@@ -42,8 +42,8 @@ bot.on("message", async message => {
     };
   }
   
-  let moneyAmt = Math.floor(Math.random() * 1) + 1;
-  let baseAmt = Math.floor(Math.random() * 1) + 1;
+  let moneyAmt = Math.floor(Math.random() * 15) + 1;
+  let baseAmt = Math.floor(Math.random() * 15) + 1;
   
   if(moneyAmt === baseAmt){
     money[message.author.id] = {
