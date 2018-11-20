@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-let money = require("./money.json");
+let money = require("../money.json");
 
 module.exports.run = async (bot, message, args) => {
   
@@ -20,6 +20,8 @@ module.exports.run = async (bot, message, args) => {
   .setAuthor(`${message.author.username}'s Balance:`)
   .setColor("#00ff00")
   .addField(`${message.author.tag} haaaaaaas...`, `${uCash} money!`)
+  
+  message.channel.send(cEmbed);
   
 }
 
