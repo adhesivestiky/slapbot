@@ -4,12 +4,12 @@ let money = require("../money.json");
 
 module.exports.run = async (bot, message, args) => {
  if(!money[message.author.id]){
-  return message.reply("You don't even ***have*** any money... **NOTE**: Money resets when the bot gets updated and at this end, it gets updated a lot. Some users are important so they get their money saved however :3");
+  return message.reply("You don't even ***have*** any money... **NOTE**: Money resets when the bot gets updated and at this stage, it gets updated a lot. Some users are important so they get their money saved however :D");
  }
  
  let pUser = message.mentions.members.first() || message.guild.members.get(args[0]);
- let pCoins = money[pUser.id].money;
- let sCoins = money[message.author.id].money;
+ let pCoins = money[pUser.id].money
+ let sCoins = money[message.author.id].money
  
  if(sCoins < args[0]) return message.repy("You don't have enough money... feelsbadman");
  
