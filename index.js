@@ -2,6 +2,7 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
+let money = require("./money.json");
 
 bot.commands = new Discord.Collection();
 
@@ -35,6 +36,25 @@ bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
+  if(!money[message.author.id]){
+    money[message.author.id] = {
+      money: 0
+    };
+  }
+  
+  let moneyAmt = Math.floor(Math.random() * 1) + 1;
+  let baseAmt = Math.floor(Math.random() * 1) + 1;
+  
+  if(moneyAmt === baseAmt){
+    money[message.author.id] = {
+      money: money[message.author.id].money + moneyAmt
+    };
+    
+    fs.writeFile("./money.json", JSON.stringify(money), (err) => {
+      if (err) console.log(err)
+    });
+  }
+  
   let prefix = botconfig.prefix
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
