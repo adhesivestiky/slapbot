@@ -16,11 +16,12 @@ module.exports.run = async (bot, message, args) => {
   
   let uCash = money[member.id].money;
   
-  let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+  let uAvatar = message.author.AvatarURL
   let cEmbed = new Discord.RichEmbed()
   .setColor("#00ff00")
-  .addField(`${member.tag} haaaaaaas...`, `${uCash} money!`)
-  .setFooter(`Requested by ${message.author.tag}, can't remember when.`);
+  .addField(`Your given user haaaaaaas...`, `${uCash} money!`)
+  .setFooter(`Requested by ${message.author.tag}`, uAvatar)
+  .setTimestamp()
   
   message.channel.send(cEmbed);
   
