@@ -3,7 +3,7 @@ let money = require("../money.json");
 
 module.exports.run = async (bot, message, args) => {
   
-  let member = message.author
+  let member = message.mentions.members.first() || message.guild.members.get(args[0]);
   if(!member){
     member = message.author
   };
@@ -16,8 +16,8 @@ module.exports.run = async (bot, message, args) => {
   
   let uCash = money[member.id].money;
   
+  let member = message.mentions.members.first() || message.guild.members.get(args[0]);
   let cEmbed = new Discord.RichEmbed()
-  .setAuthor(`${member}'s Balance:`)
   .setColor("#00ff00")
   .addField(`${member.tag} haaaaaaas...`, `${uCash} money!`)
   .setFooter(`Requested by ${message.author.tag}, can't remember when.`);
