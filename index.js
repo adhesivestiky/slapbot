@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
 let money = require("./money.json");
+let prefix = '.';
 
 bot.commands = new Discord.Collection();
 
@@ -35,7 +36,8 @@ bot.on("message", async message => {
   console.log(`received message ${message.content}`);
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
-
+  if (response.content.slice(prefix.length) !== prefix) return;
+  
   if(!money[message.author.id]){
     money[message.author.id] = {
       money: 0
