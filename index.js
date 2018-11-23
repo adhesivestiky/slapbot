@@ -36,7 +36,7 @@ bot.on("message", async message => {
   console.log(`received message ${message.content} from ${message.author.tag}`);
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
-  if (response.content.slice(prefix.length) !== prefix) return;
+  if (message.content.slice(prefix.length) !== prefix) return;
   
   if(!money[message.author.id]){
     money[message.author.id] = {
