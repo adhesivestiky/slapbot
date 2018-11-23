@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
 let money = require("./money.json");
-let prefix = botconfig.prefix
+let prefix = ".";
 
 bot.commands = new Discord.Collection();
 
