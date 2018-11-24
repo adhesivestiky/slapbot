@@ -10,8 +10,8 @@ module.exports.run = async (bot, message, args) => {
  }
  
  let pUser = message.mentions.members.first() || message.guild.members.get(args[0]);
- let pCoins = money[pUser.id].money
- let sCoins = money[message.author.id].money
+ let pCoins = money[pUser.id]
+ let sCoins = money[message.author.id]
  
  if(sCoins < args[0]) return message.reply("You don't have enough money... feelsbadman");
  
@@ -32,5 +32,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
- name: "transfer"
+ name: "give"
 }
