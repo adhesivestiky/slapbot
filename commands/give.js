@@ -1,8 +1,10 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-let money = require("../money.json");
+
 
 module.exports.run = async (bot, message, args) => {
+ let money = require("../money.json");
+ 
  if(!money[message.author.id]){
   return message.reply("You don't even ***have*** any money... **NOTE**: Money resets when the bot gets updated and at this stage, it gets updated a lot. Some users are important so they get their money saved however :D");
  }
@@ -30,5 +32,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
- name: "give"
+ name: "transfer"
 }
