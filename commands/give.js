@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
  let pCoins = money[pUser.id].money
  let sCoins = money[message.author.id].money
  
- if(sCoins < args[0]) return message.repy("You don't have enough money... feelsbadman");
+ if(sCoins < args[0]) return message.reply("You don't have enough money... feelsbadman");
  
  money[message.author.id] = {
   money: sCoins - parseInt(args[1])
