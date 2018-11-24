@@ -3,8 +3,6 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");
 let money = require("./money.json");
-let prefix = '.';
-
 bot.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
@@ -57,7 +55,7 @@ bot.on("message", async message => {
     });
   }
   
-  let prefix = botconfig.prefix
+  let prefix = '.';
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
