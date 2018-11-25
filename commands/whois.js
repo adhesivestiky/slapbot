@@ -13,7 +13,6 @@ module.exports.run = async (bot, message, args) => {
  
  .setAuthor(`Info of ${user.username}#${user.discriminator}`, userAvatar)
  .setColor("#0fff00")
- .setThumbnail("user.displayAvatarURL")
  .addField("Status", user.presence.status, true)
  .addField("Roles", member.roles.map(roles => roles.name).join(', '), true)
  .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
