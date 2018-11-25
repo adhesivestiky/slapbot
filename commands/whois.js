@@ -1,19 +1,24 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
- let person = message.mentions.members.first() || message.guild.members.get(args[0]);
- if(!person){
-  person = message.author
+ let user = message.mentions.members.first() || message.guild.members.get(args[0]);
+ if(!user){
+  user = message.author
  };
  //define before embed
- let userAvatar = person.displayAvatarURL;
- let userCreated = person.createdAt;
+ const member = message.guild.member(user);
+ let userAvatar = user.displayAvatarURL;
+ let userCreated = user.createdAt;
  let embed = new Discord.RichEmbed()
  
- .setTitle(`Info of ${person.tag}`, userAvatar)
+ .setAuthor(`Info of ${user.username}#${user.discriminator}`, userAvatar)
  .setColor("#0fff00")
- .addField("Created on", userCreated)
- .addField("i'm tired", "more soon?");
+ .setThumbnail("userAvatar")
+ .addField("Status", user.presence.status, true)
+ .addField("Roles", member.roles.map(roles => roles.name).join(', ), true)
+ .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
+ .setTimestamp();
+
  
  message.channel.send(embed);
 }
