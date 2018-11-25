@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
       let minutes = Math.floor(client.uptime / 60000) % 60;
       let seconds = Math.floor(client.uptime / 1000) % 60;
 
-      message.channel.send(`__Uptime:__\n${days}d ${hours}h ${minutes}m ${seconds}s`);
+      message.channel.send(`**Uptime:** ${days}d ${hours}h ${minutes}m ${seconds}s`);
 }
 
 module.exports.help = {
