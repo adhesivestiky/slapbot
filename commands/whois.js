@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
  
  .setTitle("Info of ${person.tag}", userAvatar)
  .setColor("#0fff00")
- .addField("Created on", uCreated)
+ .addField("Created on", userCreated)
  .addField("Joined at", person.joinedAt)
 }
 
