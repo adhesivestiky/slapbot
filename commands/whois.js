@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
  let userCreated = user.createdAt;
  let embed = new Discord.RichEmbed()
  
- .setAuthor(`Info of ${user.username}#${user.discriminator}`, userAvatar)
+ .setAuthor(`Info of ${member.username}#${member.discriminator}`, userAvatar)
  .setColor("#0fff00")
  .addField("Status", user.presence.status)
  .addField("Roles", member.roles.map(roles => roles.name).join(', '))
