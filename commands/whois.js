@@ -10,10 +10,10 @@ module.exports.run = async (bot, message, args) => {
  let userCreated = person.createdAt;
  let embed = new Discord.RichEmbed()
  
- .setTitle("Info of ${person.tag}", userAvatar)
+ .setTitle(`Info of ${person.tag}`, userAvatar)
  .setColor("#0fff00")
  .addField("Created on", userCreated)
- .addField("Joined at", person.joinedAt)
+ .addField("i'm tired", "more soon?");
  
  message.channel.send(embed);
 }
