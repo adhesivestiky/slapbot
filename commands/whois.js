@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
  if(!user){
   user = message.author
  };
- //define before embed
+
  const member = message.guild.member(user);
  let userAvatar = user.displayAvatarURL;
  let userCreated = user.createdAt;
