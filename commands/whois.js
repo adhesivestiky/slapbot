@@ -14,6 +14,8 @@ module.exports.run = async (bot, message, args) => {
  .setColor("#0fff00")
  .addField("Created on", userCreated)
  .addField("Joined at", person.joinedAt)
+ 
+ message.channel.send(embed);
 }
 
 module.exports.help = {
