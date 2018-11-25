@@ -7,8 +7,13 @@ module.exports.run = async (bot, message, args) => {
   .setTitle("Support Server")
   .setAuthor("Help", "https://cdn.discordapp.com/avatars/501207321087836161/c75271b960d592b84f9fc54a522f19d8.png?size=2048")
   .setColor("#00ffff")
+  .addField("**MAIN COMMANDS**", "Your regular old bot commands.")
+  .addBlankField(true)
   .addField("\`.ping\`", "Tells how fast the bot responds to messages.")
   .addField("\`.help\`", "Displays this menu.")
+  .addBlankField(true)
+  .addField("**ENTERTAINMENT COMMANDS**", "All commands used for entertainment purposes. Have fun!")
+  .addBlankField(true)
   .addField("\`.balance [user (optional)]\`", `Displays your cash balance (${n}).`)
   .addField("\`.give [user] [amount]\`", `Give a user a certain amount of coins (${n}).`)
   .addBlankField(true)
@@ -19,6 +24,7 @@ module.exports.run = async (bot, message, args) => {
   .setURL("https://discord.gg/yANQDJJ")
   .setTimestamp()
   
+  message.channel.send("I sent you a DM with all my commands. If you did not get it, enable DMs from server members and try again!")
   message.author.send(embed);
 }
 
