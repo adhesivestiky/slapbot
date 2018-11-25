@@ -13,8 +13,8 @@ module.exports.run = async (bot, message, args) => {
  
  .setAuthor(`Info of ${user.username}#${user.discriminator}`, userAvatar)
  .setColor("#0fff00")
- .addField("Status", user.presence.status, true)
- .addField("Roles", member.roles.map(roles => roles.name).join(', '), true)
+ .addField("Status", user.presence.status)
+ .addField("Roles", member.roles.map(roles => roles.name).join(', '))
  .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
  .setTimestamp();
 
