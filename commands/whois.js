@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
  .setColor("#0fff00")
  .setThumbnail("userAvatar")
  .addField("Status", user.presence.status, true)
- .addField("Roles", member.roles.map(roles => roles.name).join(', ), true)
+ .addField("Roles", member.roles.map(roles => roles.name).join(', '), true)
  .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
  .setTimestamp();
 
