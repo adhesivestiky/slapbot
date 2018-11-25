@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  let embed = new Discord.RichEmbed()
   let n = "**NOTE:** Money resets when the bot gets updated, and at this beta stage, it gets updated a lot. Apologies for any inconviences this may cause, when the bot reaches a point, updates will be larger and less frequent.";
+  let embed = new Discord.RichEmbed()
 
   .setTitle("Support Server")
   .setAuthor("Help", "https://cdn.discordapp.com/avatars/501207321087836161/c75271b960d592b84f9fc54a522f19d8.png?size=2048")
