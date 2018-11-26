@@ -15,9 +15,6 @@ module.exports.run = async (bot, message, args) => {
  .addField("Roles", member.roles.map(roles => roles.name).join(', '))
  .addField("Last message sent", member.lastMessage)
  .addField("Current Status", `Game: ${member.presence.game} (Null = No Game) \n Status: ${member.presence.status}`)
- .addField("Created At", member.createdAt)
- .addField("Avatar:", '  ̉')
- .setImage(member.avatarURL)
  .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
  .setTimestamp();
 
