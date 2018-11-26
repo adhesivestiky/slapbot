@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
  .setColor("#0fff00")
  .addField("Roles", member.roles.map(roles => roles.name).join(', '))
  .addField("Last message sent", member.lastMessage)
- .addField("Current Status", `Game: ${member.presence.game} \n Status: ${member.presence} (Null = No Game)`)
+ .addField("Current Status", `Game: ${member.presence.game} (Null = No Game) \n Status: ${member.presence.status}`)
  .addField("Created At", member.createdAt)
  .addField("Avatar:", '  ̉')
  .setImage(member.avatarURL)
