@@ -14,10 +14,10 @@ module.exports.run = async (bot, message, args) => {
  .setColor("#0fff00")
  .addField("Roles", member.roles.map(roles => roles.name).join(', '))
  .addField("Last message sent", member.lastMessage)
- .addField("Current Status", member.presence)
- .addField("Created At", member.createdTimestamp)
+ .addField("Current Status", `Game: ${member.presence.game} \n Status: ${member.presence} (Null = No Game)`)
+ .addField("Created At", member.createdAt)
  .addField("Avatar:", '  ̉')
- .setImage(member.displayAvatarURL)
+ .setImage(member.avatarURL)
  .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
  .setTimestamp();
 
