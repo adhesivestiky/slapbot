@@ -65,8 +65,8 @@ bot.on("message", async message => {
 
 
 
-    if(cmd === `${prefix}slap`) {
-      message.channel.send("*Slaps*");
+    if(cmd === `.`) {
+      message.delete
     }
 
   });
