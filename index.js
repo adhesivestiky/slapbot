@@ -65,9 +65,8 @@ bot.on("message", async message => {
 
 
 
-    if(cmd === `.`) {
-      message.delete
-      message.channel.send("No dots.");
+    if(cmd === `no`) {
+     message.channel.send("Yes.");
     }
 
   });
