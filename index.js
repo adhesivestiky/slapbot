@@ -27,7 +27,7 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", () => {
   console.log(`${bot.user.username} is online!!`);
-  bot.user.setActivity("with ReThink (below below below)'s insides");
+  bot.user.setActivity("at ReThink's house");
 });
 
 bot.on("message", async message => {
