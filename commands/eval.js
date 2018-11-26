@@ -2,19 +2,21 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
   
- const nice = ['306287412437450753', ''];
+ const nice = ['306287412437450753'];
   if (nice.includes(message.author.id)) {
-   try{
-    let code = args.join(" ");
-    let evaled = eval(code);
+     try{
+      let code = args.join(" ");
+      let evaled = eval(code);
 
-    if(typeof evaled !== "string")
-    evaled = require("util").inspect(evaled);
+      if(typeof evaled !== "string")
+      evaled = require("util").inspect(evaled);
 
-  message.channel.send(evaled);
+    message.channel.send(evaled);
 
-} catch(err) {
-  message.channel.send(`\`\`\`Error\`\`\` \`\`\`x1\n${(err)}\n\`\`\``);
+    } catch(err) {
+    message.channel.send(`\`\`\`Error\`\`\` \`\`\`x1\n${(err)}\n\`\`\``);
+    }
+    
   }
   
 }
