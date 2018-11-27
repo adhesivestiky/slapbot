@@ -26,14 +26,12 @@ fs.readdir("./commands/", (err, files) => {
 
 
 bot.on("ready", () => {
-  console.log(`${bot.user.username} is online!!`);
+  console.log(`${bot.user.username} is online on these servers: ${bot.guilds.map(g => g.name)}!!`);
   bot.user.setActivity("at ReThink's house");
 });
 
 bot.on("message", async message => {
-  console.log(`received message ${message.content} from ${message.author.tag}`);
   if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
   if (!message.content.startsWith(".")) return;
   
   if(!money[message.author.id]){
