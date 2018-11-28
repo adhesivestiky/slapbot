@@ -18,15 +18,17 @@ module.exports.run = async (bot, message, args) => {
   .addField("\`.give [user] [amount]\`", `Give a user a certain amount of coins (${n}).`)
   .addField("**MODERATION COMMANDS**", "This includes any command that requires a certain permission to use.")
   .addField("\`.lobby [text]\`", "Sends a message in the main channel of Tennessine (link in support server)")
-  .setFooter(`Requested by ${message.author.tag}`)
+  .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
   .setURL("https://discord.gg/yANQDJJ")
-  .setTimestamp()
+  .setTimestamp();
   
   if(message.channel.type === "dm"){
    message.channel.send("Here you go!")
   };
   
-  message.channel.send("I sent you a DM with all my commands. If you did not get it, enable DMs from server members and try again!")
+  if(!message.channel.type == "dm"){
+   message.channel.send("I sent you a DM with all my commands. If you did not get it, enable DMs from server members and try again!")
+  }
   message.author.send(embed);
 }
 
