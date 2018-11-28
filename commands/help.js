@@ -22,6 +22,10 @@ module.exports.run = async (bot, message, args) => {
   .setURL("https://discord.gg/yANQDJJ")
   .setTimestamp()
   
+  if(message.channel.type === "dm"){
+   message.channel.send("Here you go!")
+  };
+  
   message.channel.send("I sent you a DM with all my commands. If you did not get it, enable DMs from server members and try again!")
   message.author.send(embed);
 }
