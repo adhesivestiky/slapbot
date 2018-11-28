@@ -7,14 +7,7 @@ module.exports.run = async (bot, message, args) => {
  let seconds = Math.floor(bot.uptime / 1000) % 60;
  
  let energy = "Boop.";
- 
- if(days < 1){
-  energy = "Whew, I'm pretty tired...";
- }
- 
- if(days < 1){
-  energy = "Getting ready for a good day!";
- }
+
  
 //note to self: define stuff BEFORE the definition for the embed
 
@@ -26,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
  .setThumbnail(bot.user.displayAvatarURL)
  .setColor("#000fff")
  .addField("Bot Info", "This, Blob, AKA Slap Bot, is a project made by me and only me (adhesivestiky#4719). I'm making this bot for my server, and for the challenge of learning a new skill. Hope you like it!")
- .addField("Uptime", `${days} days, ${hours} hrs, ${minutes} min, and ${seconds} sec. ${energy}`)
+ .addField("Uptime", `${days} days, ${hours} hrs, ${minutes} min, and ${seconds} sec.`)
  .addField("Server Count", bot.guilds.size)
  .addField("Users", bot.users.size)
  .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
