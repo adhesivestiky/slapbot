@@ -4,9 +4,9 @@ let money = require("../money.json");
 
 module.exports.run = async (bot, message, args) => {
 
-  let item = args.join(" ").slice(22);
+  let item = args.join(" ");
   
-  if(!item) return message.reply("Specify a role please.");
+  if(!item) return message.reply("Specify an item please.");
   
   if(item == "banana"){
     let banana = message.guild.roles.find(`name`, "Banana");
