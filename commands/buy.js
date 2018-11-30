@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     await(message.author.addRole(banana.id));
     
     money[message.author.id] = {
-      money: message.author - 30
+      money: money[message.author].money - 30
     };
   };
   
@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
       message.channel.send("But you already have explosives...");
     };
     
-    await(message.author.addRole(banana.id));
+    await(message.author.addRole(bomb.id));
     
     money[message.author.id] = {
       money: money[message.author].money - 40
