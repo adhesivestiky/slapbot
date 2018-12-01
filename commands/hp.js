@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
     };
   };
   
-  let uHp = hp[member.id].hp;
+  let uHp = hp[member.id].health;
   
   let uAvatar = message.author.displayAvatarURL;
   let hpEmbed = new Discord.RichEmbed()
