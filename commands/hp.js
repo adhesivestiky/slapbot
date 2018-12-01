@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
   let uAvatar = message.author.displayAvatarURL;
   let hpEmbed = new Discord.RichEmbed()
   .setColor("#00ff00")
-  .setDescription(`<@${member.id}> **has...** \n${uHp} money!`)
+  .setDescription(`<@${member.id}> **has...** \n${uHp}/100 health!`)
   .setFooter(`Requested by ${message.author.tag}`, uAvatar)
   .setTimestamp();
   
