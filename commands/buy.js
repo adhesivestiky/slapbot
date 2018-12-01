@@ -14,8 +14,8 @@ module.exports.run = async (bot, message, args) => {
     
     await(message.member.addRole(`${banana.id}`));
     
-    money[message.author.id] = {
-      money: money[message.member].money - 40
+    money[message.member.id] = {
+      money: money[message.member.id].money - 40
     };
   };
   
@@ -25,8 +25,8 @@ module.exports.run = async (bot, message, args) => {
     
     await(message.member.addRole(`${bomb.id}`));
     
-    money[message.author.id] = {
-      money: money[message.member].money - 30
+    money[message.member.id] = {
+      money: money[message.member.id].money - 30
     };
   };
     
