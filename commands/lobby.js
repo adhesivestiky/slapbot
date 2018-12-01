@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   }
   
   const sayMessage = args.join(" ");
-  let chat = message.guild.channels.find(`name`, "main-lobby");
+  let chat = bot.guild.channels.find('480595582541365258');
   
   chat.send(sayMessage);
 
