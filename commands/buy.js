@@ -11,9 +11,6 @@ module.exports.run = async (bot, message, args) => {
   if(item == "banana"){
     let banana = message.guild.roles.find(`name`, "Banana");
     if(!banana) return message.reply("This server does not have a role named 'Banana'. Ask an admin to create one for you if you want this feature!");
-    if(message.member.hasRole(`banana.id`)){
-      message.channel.send("You already have a banana. Eat it or give it to a friend!");
-    };
     
     await(message.member.addRole(`${banana.id}`));
     
@@ -25,9 +22,6 @@ module.exports.run = async (bot, message, args) => {
   if(item == "bombs" || "explosives"){
     let bomb = message.guild.roles.find(`name`, "Explosives");
     if(!bomb) return message.reply("This server does not have a role named 'Explosives'. Ask an admin to create one for you if you want this feature!");
-    if(message.member.hasRole(`${bomb.id}`)){
-      message.channel.send("You already have a bomb in hand.");
-    };
     
     await(message.member.addRole(`${bomb.id}`));
     
