@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
   .addField("\`.balance [user (optional)]\`", `Displays your cash balance (${n}).`)
   .addField("\`.give [user] [amount]\`", `Give a user a certain amount of coins (${n}).`)
   .addField("\`.buy [item]\`", "Buys a certain item.")
-  .addField("\`.shop\`", "Displays list of all purchasable items!");
+  .addField("\`.shop\`", "Displays list of all purchasable items!")
   .addField("**MODERATION COMMANDS**", "This includes any command that requires a certain permission to use.")
   .addField("\`.lobby [text]\`", "Sends a message in the main channel of Tennessine (link in support server)")
   .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
