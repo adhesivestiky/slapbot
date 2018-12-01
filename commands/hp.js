@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
   
  if(!hp[member.id]){
     hp[member.id] = {
-      health: 0
+      health: 100
     };
   };
   
