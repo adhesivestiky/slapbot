@@ -1,6 +1,11 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+  let dev = "Developer commands are not shown to the public.";
+  if(message.author.id == '306287412437450753'){
+    dev = "These are commands you can use: \n\`.eval [code]\` \nThis runs a bit of code you type"
+  };
+  
   let n = "**NOTE:** Money resets when the bot gets updated, and at this beta stage, it gets updated a lot. Apologies for any inconviences this may cause, when the bot reaches a point, updates will be larger and less frequent.";
   let embed = new Discord.RichEmbed()
 
@@ -20,17 +25,17 @@ module.exports.run = async (bot, message, args) => {
   .addField("\`.shop\`", "Displays list of all purchasable items!")
   .addField("**MODERATION COMMANDS**", "This includes any command that requires a certain permission to use.")
   .addField("\`.lobby [text]\`", "Sends a message in the main channel of Tennessine (link in support server)")
+  .addField("**DEVELOPER COMMANDS**", `${dev}`)
   .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
   .setURL("https://discord.gg/yANQDJJ")
   .setTimestamp();
   
   if(message.channel.type === "dm"){
    message.channel.send("Here you go!")
+  } else {
+     message.channel.send("I sent you a DM with all my commands. If you did not get it, enable DMs from server members and try again!")
   };
   
-  if(!message.channel.type == "dm"){
-   message.channel.send("I sent you a DM with all my commands. If you did not get it, enable DMs from server members and try again!")
-  }
   message.author.send(embed);
 }
 
