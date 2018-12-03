@@ -27,12 +27,15 @@ fs.readdir("./commands/", (err, files) => {
 
 bot.on("ready", () => {
   console.log(`${bot.user.username} is online on these servers: ${bot.guilds.map(g => g.name)}!!`);
-  bot.user.setActivity("at ReThink's house");
+  bot.user.setActivity(`With ${bot.users.size} users | .help`);
 });
 
 bot.on("message", async message => {
   if(message.author.bot) return;
   if (!message.content.startsWith(".")) return;
+  if(message.author.id == '482191517662838789'){
+    message.channel.send('Not for you I won\'t. You\'re ***blacklisted***!');
+  };
   
   if(!money[message.author.id]){
     money[message.author.id] = {
