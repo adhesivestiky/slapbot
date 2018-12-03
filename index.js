@@ -45,7 +45,7 @@ bot.on("message", async message => {
   
   if(moneyAmt === baseAmt){
     money[message.author.id] = {
-      money: money[message.author.id].money + moneyAmt
+      money: money[message.author.id].money + moneyAmt + baseAmt
     };
     
     fs.writeFile("./money.json", JSON.stringify(money), (err) => {
@@ -63,8 +63,8 @@ bot.on("message", async message => {
 
 
 
-    if(cmd === `no`) {
-     message.channel.send("Yes.");
+    if(cmd === `yay`) {
+     message.channel.send("<a:518507296943243300:>");
     }
 
   });
