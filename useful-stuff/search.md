@@ -1,6 +1,7 @@
 Code for searching for members/roles:
 (Use `users` instead of `roles` to search for members.)
-```let role = args.join(" ");
+```.
+    let role = args.join(" ");
 	  if (!role) return message.reply("please say a role to view.");
     const roles = message.guild.roles.array();
     const matches = roles.filter(role => role.name.toLowerCase().includes(args.join(" ").toLowerCase())) 
