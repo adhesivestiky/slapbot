@@ -4,22 +4,21 @@ module.exports.run = async (bot, message, args) => {
 
      let user = args.join(" ");
 	  if(!user){
-    user = message.author
+    message.channel.send('Specify a user!');
    };
-    const users = message.guild.users.array();
-    const matches = users.filter(user => user.name.toLowerCase().includes(args.join(" ").toLowerCase())) 
+    const Users = message.guild.users.array();
+    const matches = Users.filter(user => user.name.toLowerCase().includes(args.join(" ").toLowerCase())) 
           user = matches[0];
 	  if(matches.length === 1) {
 
- let member = message.guild.member(user);
  let embed = new Discord.RichEmbed()
  
- .setAuthor(`User Info`, member.displayAvatarURL)
- .setDescription(`<@${member.id}>'s information`)
- .setColor(`${member.displayColor}`)
- .addField("Roles", member.roles.map(roles => roles.name).join(', '))
- .addField("Last message sent", member.lastMessage)
- .addField("Current Status", `Game: ${member.presence.game} (Null = No Game) \n Status: ${member.presence.status}`)
+ .setAuthor(`User Info`, user.displayAvatarURL)
+ .setDescription(`<@${user.id}>'s information`)
+ .setColor(`${user.displayColor}`)
+ .addField("Roles", user.roles.map(roles => roles.name).join(', '))
+ .addField("Last message sent", user.lastMessage)
+ .addField("Current Status", `Game: ${user.presence.game} (Null = No Game) \n Status: ${user.presence.status}`)
  .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL)
  .setTimestamp();
 
