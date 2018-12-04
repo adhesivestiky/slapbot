@@ -30,12 +30,13 @@ module.exports.run = async (bot, message, args) => {
     if(matches.length === 0) message.reply("couldn't find any users.");
     if(matches.length >= 2) {
        let failembed = new Discord.RichEmbed()
-       .setColor('##db0000')
+       .setColor('#db0000')
        .setAuthor('Failed:', 'https://cdn.discordapp.com/attachments/516507779738107919/519344315672166429/unknown.png')
        .setDescription(`**Too many users:**/n${matches.join("\n")}`);       
        
        message.channel.send(failembed);
 	 };
+       };
 }
 
 module.exports.help = {
