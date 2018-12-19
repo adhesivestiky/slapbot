@@ -9,8 +9,10 @@ module.exports.run = async (bot, message, args) => {
   .setDescription(`**Response time:** \`${ping.createdTimestamp - load.createdTimestamp}ms\`\n**Bot ping:** \`${Math.round(bot.ping)}ms\``)
   .setThumbnail(`Panged by ${message.author.tag}`, `https://cdn.discordapp.com/emojis/524753411954966549.gif?v=1`)
   .setTimestamp();
-}
 
+  ping.delete();
+  message.channel.send(pingembed);
+}
 module.exports.help = {
   name: "ping"
 }
