@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   let pingembed = new Discord.RichEmbed()
   .setTitle('Pong!')
   .setDescription(`**Response time:** \`${ping.createdTimestamp - load.createdTimestamp}ms\`\n**Bot ping:** \`${Math.round(bot.ping)}ms\``)
-  .setThumbnail(`Panged by ${message.author.tag}`, `https://cdn.discordapp.com/emojis/524753411954966549.gif?v=1`)
+  .setThumbnail(`Panged by ${message.author.tag}`, message.author.displayAvatarURL)
   .setTimestamp();
 
   ping.delete();
