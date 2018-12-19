@@ -7,9 +7,7 @@ module.exports.run = async (bot, message, args) => {
   let pingembed = new Discord.RichEmbed()
   .setTitle('Pong!')
   .setColor('RANDOM')
-  .setDescription(`**Response time:** \`${ping.createdTimestamp - load.createdTimestamp}ms\`\n**Bot ping:** \`${Math.round(bot.ping)}ms\``)
-  .setThumbnail(`Panged by ${message.author.tag}`)
-  .setTimestamp();
+  .setDescription(`**Response time:** \`${ping.createdTimestamp - load.createdTimestamp}ms\`\n**Bot ping:** \`${Math.round(bot.ping)}ms\``);
 
   ping.delete();
   message.channel.send(pingembed);
