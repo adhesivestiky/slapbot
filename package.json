@@ -6,10 +6,5 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "adhesive",
-  "license": "ISC",
-  "dependencies": {
-    "discord.js": "^11.4.2",
- 
   "devDependencies": {}
 }
