@@ -65,12 +65,23 @@ bot.on("message", async message => {
   if(commandfile) commandfile.run(bot,message,args);
 
 
-
+  
     if(cmd === `yay`) {
-     message.channel.send("<a:518507296943243300:>");
-    }
+     message.channel.send("m?");
+    };
 
   });
+
+bot.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find(ch => ch.name === 'lobby');
+  // Do nothing if the channel wasn't found on this server
+  if(!channel) return;
+  // Send the message, mentioning the member
+  member.addRole(member.guild.roles.find(r => r.name === 'Member'));
+  channel.send(`Welcome to ${member.guild.name}, ${member}! Please read <#524730641661820938>, and move on from there!`);
+});
+
 
 
 bot.login(process.env.token);
