@@ -11,7 +11,6 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "ree": "^0.1.1-2"
-     //^ I got a bit excited with node modules, you can ignore that: I don't even know what it does
   },
   "devDependencies": {}
 }
