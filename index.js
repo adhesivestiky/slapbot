@@ -78,7 +78,7 @@ bot.on('guildMemberAdd', member => {
   // Do nothing if the channel wasn't found on this server
   if(!channel) return;
   // Send the message, mentioning the member
-  member.addRole(member.guild.roles.find(r => r.name === 'Member'));
+  member.addRole(member.guild.roles.find(`name`, 'Member'));
   channel.send(`Welcome to ${member.guild.name}, ${member}! Please read <#524730641661820938>, and move on from there!`);
 });
 
