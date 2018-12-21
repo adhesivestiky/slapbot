@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
   
   const menu = await message.channel.send(menuembed);
   menu.react('🎋');
-  if(message.reaction.emoji.name === '🎋' && message.reaction.count === '2'){
+  if(message.reaction.name === '🎋' && message.reaction.count === '2'){
     let funmenu = new Discord.RichEmbed()
     .setTitle('**ENTERTAINMENT COMMANDS**')
     .setColor('#4286f4')
